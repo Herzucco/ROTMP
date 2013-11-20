@@ -1,4 +1,4 @@
-ROTMP
-=====
+RealmOfTheMadPol
+================
 
-ROTMP
+A game made with Node JS.

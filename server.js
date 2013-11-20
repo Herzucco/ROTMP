@@ -79,7 +79,7 @@ var pseudoList = [];
 var pseudoGenerator = function (pseudoResult){
 
 	this.pseudoResult = pseudoResult;
-    var names = ["Turfu", "Colonel", "Pol", "Pom", "Moutarde", "Kiwi", "Frite", "FDP", "Megazord", "Poney", "Jojo", "Trucs", "Machin", "Sergent", "Mister", "Killer", "Soldat", "Wesh", "Yolo", "Tuc", "Turc", "Slam"];
+    var names = ["Turfu", "Colonel", "Pol", "Pom", "Moutarde", "Kiwi", "Frite", "FDP", "Megazord", "Poney", "Jojo", "Trucs", "Machin", "Sergent", "Mister", "Killer", "Soldat", "Wesh", "Yolo", "Tuc", "Turc", "Slam", "Bails", "( ͡° ͜ʖ ͡°)"];
     var randomness1 = parseInt(Math.random() * names.length);
     var randomness2 = parseInt(Math.random() * names.length);
     var randomness3 = parseInt(Math.random() * names.length);

@@ -1,8 +1,8 @@
 var WeaponComponent = function(proto){
-	proto.tir = function(camPosition){
-		this.bulletSettings(camPosition, "basic");
+	proto.tir = function(camPosition, typeOfWeapon){
+		this.bulletSettings(camPosition, typeOfWeapon);
 	}
-	proto.createBullet = function(camPosition, speed, color){
+	proto.createBullet = function(camPosition, speed, color, size){
 		var position = this.get("position");
 		var context = this.get("context");
 		eventManager = new EventController({});
@@ -10,8 +10,8 @@ var WeaponComponent = function(proto){
 			speed : speed,
 			context : context,
 			size : {
-				width : 5,
-				height : 5,
+				width : size,
+				height : size,
 			},
 			position : {
 				x : position.x,
@@ -23,26 +23,25 @@ var WeaponComponent = function(proto){
 		}, eventManager);
 	}
 
-	
 	proto.bulletSettings = function(camPosition, currentWeapon){
 		var weapons = {};
 
 		switch(currentWeapon)
 		{
 			case "basic":
-			basic : this.createBullet(camPosition, 5, "white");
+			basic : this.createBullet(camPosition, 5, "white", 6);
 			break;
 
 			case "gatling":
-			this.createBullet(camPosition, 10, "cyan");
+			this.createBullet(camPosition, 10, "cyan", 6);
 			break;
 
 			case "sniper":
-			this.createBullet(camPosition, 30, "orange");
+			this.createBullet(camPosition, 30, "purple", 7);
 			break;
 
 			case "bazooka":
-			this.createBullet(camPosition, 2, "purple");
+			this.createBullet(camPosition, 2, "orange", 20);
 			break;	
 		}
 	}

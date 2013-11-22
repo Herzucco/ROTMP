@@ -16,6 +16,7 @@ Player.prototype.init = function init(params){
 		color : params.color || "white",
 		acceleration : {x : 0, y : 0},
 		life : 10,
+		typeOfWeapon : "basic",
 		score : 0,
         nickName : params.nickName || "player",
         boxCollider : {
@@ -88,6 +89,10 @@ Player.prototype.observeEvents = function(){
 };
 
 Player.prototype.onCollisionEnter = function(other, overlap){
-    
+	var newTypeOfWeapon = other.get("typeWeapon");
+	if(newTypeOfWeapon != undefined)
+	{
+		this.set("typeOfWeapon", newTypeOfWeapon); 	
+	}
 }
 

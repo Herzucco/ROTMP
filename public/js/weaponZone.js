@@ -24,7 +24,8 @@ Zone.prototype.init = function init(params){
             rigidBody : false,
             dynamic : false,
         },
-        count : 60
+        count : 60,
+        typeWeapon : params.typeWeapon
 	});
 	this.observeEvents();
 };

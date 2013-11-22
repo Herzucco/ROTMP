@@ -60,29 +60,29 @@
 	var initPlayer = function(nickName){
          var zone1 = new Zone({
             context : context,
-           
              position : {
                 x : 100,
                 y : 100
             },
+            typeWeapon : "sniper",
             color: "purple",
         }, eventManager);
          var zone2 = new Zone({
             context : context,
-           
              position : {
                 x : 500,
                 y : 100
             },
+            typeWeapon : "gatling",
             color : "cyan",
         }, eventManager);
          var zone3 = new Zone({
             context : context,
-            
              position : {
                 x : 300,
                 y : 300
             },
+            typeWeapon : "bazooka",
             color: "orange",
         }, eventManager);
 		var x = Math.random()*600, y = Math.random()*400;
@@ -127,10 +127,11 @@
             this.eventManager.trigger("newPositionEmit", [{position : this.get("position"), id : this.id, collider : this.get("collider")}]);
         };
          eventManager.on("click",function(){
-            var camPosition = mouse.get("position")
+            var camPosition = mouse.get("position");
+            var typeWeapon = this.get("typeOfWeapon");
          	if(this.get("state") === "alive")
          	{
-            	this.tir(camPosition);
+            	this.tir(camPosition, typeWeapon);
          	}
         }, player)
         eventManager.on("keyDown"+40+player.id,function(){

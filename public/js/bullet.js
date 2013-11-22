@@ -28,7 +28,7 @@ Bullet.prototype.init = function init(params){
         },
         friction : params.friction || 0.5,
         playerID : params.playerID,
-        camPosition : params.camPosition
+        camPosition : params.camPosition,
 	});
 	this.observeEvents();
 	this.calculate();
@@ -51,11 +51,21 @@ Bullet.prototype.calculate = function(){
 }
 
 
-Bullet.prototype.run = function(){
-	this.updatePosition();
-    this.render();
-    this.checkCollisions();
-    this.move();
+Bullet.prototype.run = function(out){
+	
+		this.updatePosition();
+	    this.render();
+	    this.checkCollisions();
+	    this.move();
+	    this.checkPosition();	
+}
+
+Bullet.prototype.checkPosition = function(){
+	var position = this.get("position");
+	if(position.x >1800 && position.y >1200)
+	{
+		this.destroy();
+	}
 }
 
 Bullet.prototype.onCollisionEnter = function(other){

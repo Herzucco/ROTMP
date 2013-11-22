@@ -32,7 +32,7 @@ Zone.prototype.run = function(){
 	this.checkCollisions();
 	this.updatePosition();
 	var position = this.get("position");
-	var count = this.get(" count");
+	var count = this.get("count");
 	count -=0.04;
 	this.set("count", count);
 	count = Math.round(count);
@@ -45,8 +45,7 @@ Zone.prototype.run = function(){
 		this.set("count", 60)
 		this.set("position", position)
 	}
-		
-	
+	console.log(count);
 }
 
 Zone.prototype.render = function(x,y){

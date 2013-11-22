@@ -45,7 +45,6 @@ Zone.prototype.run = function(){
 		this.set("count", 60)
 		this.set("position", position)
 	}
-	console.log(count);
 }
 
 Zone.prototype.render = function(x,y){

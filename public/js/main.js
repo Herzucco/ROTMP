@@ -58,6 +58,33 @@
 		return mouse;
 	}
 	var initPlayer = function(nickName){
+         var zone1 = new Zone({
+            context : context,
+           
+             position : {
+                x : 100,
+                y : 100
+            },
+            color: "purple",
+        }, eventManager);
+         var zone2 = new Zone({
+            context : context,
+           
+             position : {
+                x : 500,
+                y : 100
+            },
+            color : "cyan",
+        }, eventManager);
+         var zone3 = new Zone({
+            context : context,
+            
+             position : {
+                x : 300,
+                y : 300
+            },
+            color: "orange",
+        }, eventManager);
 		var x = Math.random()*600, y = Math.random()*400;
 		var player = new Player({
 			speed : 0.5,
@@ -86,6 +113,7 @@
             },
             color : "blue",
         }, eventManager);
+
         player.require(MoveComponent, LifeComponent, ScoreComponent, NickNameComponent);
         player.runAlive = function(){
             this.updatePosition();

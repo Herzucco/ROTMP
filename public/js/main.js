@@ -74,18 +74,38 @@
 			friction : 0.7,
 			color : "red",
 		}, eventManager);
-        var wall = new Wall({
-            context : context,
-            size : {
-                width : 100,
-                height : 100,
-            },
-            position : {
-                x : 100,
-                y : 100
-            },
-            color : "blue",
-        }, eventManager);
+
+		var wallsTabs = [];
+		var wallTab = [];
+    for (var i = 0; i < 60; i++) {
+    	var wallRandom = parseInt(Math.random() * 2);
+    	wallTab.push(wallRandom);
+    }
+    for (var i = 0; i < 40; i++) {
+    	wallsTabs.push(wallTab);
+    }
+    console.log(wallsTabs);
+    for (var j = 0; j < wallsTabs.length; j++) {
+    for (var i = 0; i < wallTab.length; i++) {
+	    var wallPars = parseInt(wallTab[i]);
+	    if (wallPars === 1)
+	    {
+		    var wall = new Wall({
+		        context : context,
+		        size : {
+		            width : 10,
+		            height : 10,
+		        },
+		        position : {
+		            x : i*10,
+		            y : 0
+		        },
+		        color : "green",
+		    }, eventManager);	    	
+	    }
+    }
+	}
+
         player.require(MoveComponent, LifeComponent, ScoreComponent, NickNameComponent);
         player.runAlive = function(){
             this.updatePosition();
